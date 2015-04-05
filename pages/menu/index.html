@@ -1,0 +1,16 @@
+<nav>
+    <ul class="pagination">
+        <li>
+            <a href="" ng-click="previousPage()" aria-label="Föregående">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <!-- TODO: make into ng-repeat loop -->
+        <li ng-repeat="(i,page) in pages" class="{{isActive(page)}}"><a href="#{{page.url}}">{{page.name}}</a></li>
+        <li>
+            <a href="" ng-click="nextPage()"  aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

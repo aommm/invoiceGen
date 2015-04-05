@@ -1,0 +1,53 @@
+<form class="form-horizontal">
+    <h3>Ditt företag</h3>
+    <div class="form-group">
+        <label for="yourName" class="col-sm-2 control-label">Namn</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="yourName" ng-model="company.yours.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="yourAddress" class="col-sm-2 control-label">Adress</label>
+        <div class="col-sm-3">
+            <textarea class="form-control" id="yourAddress" ng-model="company.yours.address" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contactInfo" class="col-sm-2 control-label">Kontaktuppgifter</label>
+        <div class="col-sm-3">
+            <textarea class="form-control" id="contactInfo" ng-model="company.yours.contactInfo" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="yourContactName" class="col-sm-2 control-label">Referenspersons namn</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="yourContactName" ng-model="company.yours.contactName">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="yourBank" class="col-sm-2 control-label">Bankkonto</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="yourBank" ng-model="company.yours.bank">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="yourVatNr" class="col-sm-2 control-label">Momsregisteringsnummer</label>
+        <div class="col-sm-3">
+            <input type="text" class="form-control" id="yourVatNr" ng-model="company.yours.vatNr">
+        </div>
+    </div>
+
+    <h3>Mottagarens företag</h3>
+    <div class="form-group">
+        <label for="theirAddress" class="col-sm-2 control-label">Adress</label>
+        <div class="col-sm-3">
+            <textarea class="form-control" id="theirAddress" ng-model="company.theirs.address" rows="3"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" ng-click="saveAndNext()">Spara och gå vidare</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,100 @@
+body {
+	font-family: Helvetica;
+	line-height: 1.5em;
+}
+
+h4 {
+	margin-top: 5px;
+	margin-bottom: 5px; 
+}
+
+#wrapper {
+	width: 900px;
+	margin: 10px auto;
+}
+
+#invoice-data, #customer-data {
+	width: 50%;
+}
+
+#invoice-data {
+	float: left;
+}
+
+#customer-data {
+	float: right;
+	text-align: right;
+}
+
+#content {
+	clear: both;
+	padding: 30px 0;
+}
+
+#f-skatt {
+	text-align: right;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+#summary {
+	margin: 60px 0;
+	width: 28%;
+	float: right;
+}
+
+#summary th {
+	text-align: left;
+	font-weight: normal;
+}
+
+#summary td {
+	text-align: right;
+}
+
+#summary th {
+	padding-right: 10px;
+	width: 62%;
+}
+
+#summary .total > th, #summary .total > td {
+	font-weight: bold;
+}
+
+#footer {
+	border-top: 1px solid #ccc;
+}
+
+.col:first-of-type {
+	padding-left: 0;
+}
+
+.col {
+	box-sizing: border-box;
+	float: left;
+	width: 33%;
+	padding: 1%;
+}
+
+.col p {
+	margin-top: 5px;
+}
+
+#invoice-details {
+	width: 100%;
+	border-spacing: 0px;
+}
+
+
+#invoice-details th, #invoice-details td {
+	text-align: left;
+	width: 20%;
+}
+
+#invoice-details th {
+	border-bottom: 1px solid #ccc;
+}
+
+#invoice-details th:first-child, #invoice-details td:first-child {
+	width: 40%;
+}

@@ -1,0 +1,78 @@
+
+<div id="wrapper">
+    <header>
+        <h1>{{company.yours.name}}</h1>
+        <div id="invoice-data">
+            <p>
+                Fakturanummer: <strong>{{invoice.nr}}</strong> <br>
+                Fakturadatum: <strong>{{invoice.startDate}}</strong> Förfallodatum: <strong>{{invoice.endDate}}</strong><br>
+                Dröjsmålsränta: Enligt lag<br>
+            </p>
+            <p>Er referens: {{company.yours.contactName}}</p>
+        </div>
+        <div id="customer-data" style="text-align: right">
+            <p>{{company.theirs.address}}</p>
+        </div>
+    </header>
+    <div id="content">
+
+        <table id="invoice-details">
+            <thead>
+                <tr>
+                    <th>Text</th>
+                    <th>Timmar</th>
+                    <th>À-pris</th>
+                    <th>Pris exkl. moms</th>
+                    <th>Momssats</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B&B Web ({{invoice.startDate}} - {{invoice.endDate}})</td>
+                    <td>{{invoice.hours}}</td>
+                    <td>{{invoice.hourlyRate | showCurrency}}</td> <!-- TODO: change to allow multiple rows here -->
+                    <td>{{price.withoutTax | showCurrency}}</td>
+                    <td>{{price.taxRate | showPercent}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table id="summary">
+            <tbody>
+                <tr>
+                    <th>Pris exkl. moms</th>
+                    <td>{{price.withoutTax | showCurrency}}</td>
+                </tr>
+                <tr>
+                    <th>Moms (25%)</th>
+                    <td>{{price.tax | showCurrency}}</td>
+                </tr>
+                <tr class="total">
+                    <th>Summa att betala</th>
+                    <td>{{price.withTax | showCurrency}}</td>
+                </tr>
+            </tbody>
+    </table>
+
+    </div>
+    <div id="f-skatt">Godkänd för F-skatt</div>
+    <footer id="footer">
+        <div class="row">
+            <div class="col">
+                <h4>Adressuppgifter</h4>
+                <p>{{company.yours.address}}</p>
+            </div>
+            <div class="col">
+                <h4>Bankkonto</h4>
+                <p>{{company.yours.bank}}</p>
+
+                <h4>Momsreg.nr</h4>
+                <p>{{company.yours.vatNr}}</p>
+            </div>
+            <div class="col">
+                <h4>Kontaktuppgifter</h4>
+                <p>{{company.yours.contactInfo}}</p>
+            </div>
+        </div>
+    </footer>
+</div>
