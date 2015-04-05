@@ -17,20 +17,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
     <!-- Application -->
-    <script src="pages/filters.js"></script>
-    <script src="pages/menu/script.js"></script>
-    <script src="pages/company/script.js"></script>
-    <script src="pages/invoice/script.js"></script>
-    <script src="pages/view/script.js"></script>
+    <script src="modules/filters.js"></script>
+    <script src="modules/menu/script.js"></script>
+    <script src="modules/company/script.js"></script>
+    <script src="modules/invoice/script.js"></script>
+    <script src="modules/view/script.js"></script>
 
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="css/invoice.css" />
 </head>
+
 <body ng-app="invoiceGen" ng-controller="IndexCtrl">
 
     <div class="container">
         <!-- TODO: replace with component directive thing -->
-        <div ng-include=" 'pages/menu/index.html' " ng-controller="MenuCtrl"></div>
+        <div ng-include=" 'modules/menu/index.html' " ng-controller="MenuCtrl"></div>
         <div ng-view></div>
 
     </div>

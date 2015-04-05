@@ -3,9 +3,9 @@
  */
 
 var pages = [
-    {url: '/company', name: 'Företagsinformation', templateUrl: 'pages/company/index.html', controller: 'CompanyCtrl'},
-    {url: '/invoice', name: 'Fakturainformation', templateUrl: 'pages/invoice/index.html', controller: 'InvoiceCtrl'},
-    {url: '/view', name: 'Visa faktura', templateUrl: 'pages/view/index.html', controller: 'ViewCtrl'}
+    {url: '/company', name: 'Företagsinformation', templateUrl: 'modules/company/index.html', controller: 'CompanyCtrl'},
+    {url: '/invoice', name: 'Fakturainformation', templateUrl: 'modules/invoice/index.html', controller: 'InvoiceCtrl'},
+    {url: '/view', name: 'Visa faktura', templateUrl: 'modules/view/index.html', controller: 'ViewCtrl'}
 ];
 
 angular.module('invoiceGen', ['ngRoute', 'angular-locker', 'menu', 'companyPage', 'invoicePage', 'viewPage'])
@@ -14,7 +14,7 @@ angular.module('invoiceGen', ['ngRoute', 'angular-locker', 'menu', 'companyPage'
 
         // Default route goes to first url
         $routeProvider.when('/', {
-            redirectTo: pages[0].url // TODO: check localstorage here, if company info already exists
+            redirectTo: pages[0].url // Can't check localStorage yet, no $scope here. Is done in controller
         });
         // Create routes dynamically
         _.forEach(pages, function(page) {
