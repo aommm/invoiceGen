@@ -8,7 +8,7 @@ var pages = [
     {url: '/view', name: 'Visa faktura', templateUrl: 'modules/view/index.html', controller: 'ViewCtrl'}
 ];
 
-angular.module('invoiceGen', ['ngRoute', 'angular-locker', 'menu', 'companyPage', 'invoicePage', 'viewPage'])
+angular.module('invoiceGenerator', ['ngRoute', 'angular-locker', 'menu', 'companyPage', 'invoicePage', 'viewPage'])
 
     .config(['$routeProvider', function($routeProvider) {
 
