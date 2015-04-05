@@ -5,7 +5,7 @@
         <div id="invoice-data">
             <p>
                 Fakturanummer: <strong>{{invoice.nr}}</strong> <br>
-                Fakturadatum: <strong>{{invoice.startDate}}</strong> Förfallodatum: <strong>{{invoice.endDate}}</strong><br>
+                Fakturadatum: <strong>{{invoice.startDate | showDate}}</strong> Förfallodatum: <strong>{{invoice.endDate | showDate}}</strong><br>
                 Dröjsmålsränta: Enligt lag<br>
             </p>
             <p>Er referens: {{company.yours.contactName}}</p>
@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>B&B Web ({{invoice.startDate}} - {{invoice.endDate}})</td>
+                    <td>B&B Web ({{invoice.startDate | showDate}} - {{invoice.endDate | showDate}})</td>
                     <td>{{invoice.hours}}</td>
                     <td>{{invoice.hourlyRate | showCurrency}}</td> <!-- TODO: change to allow multiple rows here -->
                     <td>{{price.withoutTax | showCurrency}}</td>
