@@ -8,8 +8,7 @@ var pages = [
     {url: '/view', name: 'Visa faktura', templateUrl: 'pages/view/index.html', controller: 'ViewCtrl'}
 ];
 
-angular.module('invoiceGen', ['ngRoute', 'menu', 'companyPage', 'invoicePage', 'viewPage'])
-
+angular.module('invoiceGen', ['ngRoute', 'angular-locker', 'menu', 'companyPage', 'invoicePage', 'viewPage'])
 
     .config(['$routeProvider', function($routeProvider) {
 
@@ -26,7 +25,7 @@ angular.module('invoiceGen', ['ngRoute', 'menu', 'companyPage', 'invoicePage', '
         });
     }])
     // Topmost controller, for the whole page
-    .controller('IndexCtrl', ['$scope', '$location', function($scope, $location) {
+    .controller('IndexCtrl', ['$scope', '$location', 'locker', function($scope, $location, locker) {
 
         // Page handling
         $scope.pages = pages;
@@ -47,10 +46,11 @@ angular.module('invoiceGen', ['ngRoute', 'menu', 'companyPage', 'invoicePage', '
             }
         };
 
-        // Data handling: initialize everything to empty
-        $scope.invoice = {};
-        $scope.company = {};
-        $scope.company.yours = {};
-        $scope.company.theirs = {};
+        // Data handling
+        // Bind companies to localstorage and initialize invoice to empty
+//        locker.bind($scope, 'invoice');
+        locker.bind($scope, 'company', {}); // default value {} is important!
+        $scope.invoice = {taxRate: 0.25};
+
 
     }]);

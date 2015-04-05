@@ -6,9 +6,6 @@ angular.module('invoicePage', [])
 
     .controller('InvoiceCtrl', ['$scope', function($scope) {
 
-        // Default tax rate
-        $scope.invoice.taxRate = 0.25;
-
         // Handle pasting of invoices
         $scope.invoicePasted = function(e) {
 
