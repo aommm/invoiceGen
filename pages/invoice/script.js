@@ -6,6 +6,9 @@ angular.module('invoicePage', [])
 
     .controller('InvoiceCtrl', ['$scope', function($scope) {
 
+        // Default tax rate
+        $scope.invoice.taxRate = 0.25;
+
         // Handle pasting of invoices
         $scope.invoicePasted = function(e) {
 
@@ -25,11 +28,12 @@ angular.module('invoicePage', [])
                     var vals = val.split("\n");
 
                     // All Invoice properties paired with a conversion function
-                    var properties = [['nr',Number], ['startDate',makeDate], ['endDate',makeDate], ['hours',Number], ['hourlyRate',Number]];
+                    var properties = [['nr',Number], ['startDate',makeDate], ['endDate',makeDate], ['hours',Number],
+                        ['hourlyRate',Number], ['taxRate',Number]];
 
                     // For each row in pasted input, try to convert it to a property and add to model
                     _.forEach(vals, function(v,k) {
-                        console.log("k:",k,"v:",v);
+                        // console.log("k:",k,"v:",v);
                         if (k<properties.length) {
                             var prop = properties[k]; // property key in model and its conversion fn
                             $scope.invoice[prop[0]] = prop[1](v);

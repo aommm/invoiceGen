@@ -31,8 +31,8 @@
                     <td>B&B Web ({{invoice.startDate | showDate}} - {{invoice.endDate | showDate}})</td>
                     <td>{{invoice.hours}}</td>
                     <td>{{invoice.hourlyRate | showCurrency}}</td> <!-- TODO: change to allow multiple rows here -->
-                    <td>{{price.withoutTax | showCurrency}}</td>
-                    <td>{{price.taxRate | showPercent}}</td>
+                    <td>{{price.withoutTax() | showCurrency}}</td>
+                    <td>{{invoice.taxRate | showPercent}}</td>
                 </tr>
             </tbody>
         </table>
@@ -41,15 +41,15 @@
             <tbody>
                 <tr>
                     <th>Pris exkl. moms</th>
-                    <td>{{price.withoutTax | showCurrency}}</td>
+                    <td>{{price.withoutTax() | showCurrency}}</td>
                 </tr>
                 <tr>
                     <th>Moms (25%)</th>
-                    <td>{{price.tax | showCurrency}}</td>
+                    <td>{{price.tax() | showCurrency}}</td>
                 </tr>
                 <tr class="total">
                     <th>Summa att betala</th>
-                    <td>{{price.withTax | showCurrency}}</td>
+                    <td>{{price.withTax() | showCurrency}}</td>
                 </tr>
             </tbody>
     </table>
