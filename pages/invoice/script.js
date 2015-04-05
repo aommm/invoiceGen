@@ -25,7 +25,8 @@ angular.module('invoicePage', [])
                     var vals = val.split("\n");
 
                     // All Invoice properties paired with a conversion function
-                    var properties = [['nr',Number], ['startDate',makeDate], ['endDate',makeDate], ['hours',Number],
+                    var properties = [['nr',Number], ['invoiceDate',makeDate], ['expirationDate',makeDate],
+                        ['startDate',makeDate], ['endDate',makeDate], ['hours',Number],
                         ['hourlyRate',Number], ['taxRate',Number]];
 
                     // For each row in pasted input, try to convert it to a property and add to model

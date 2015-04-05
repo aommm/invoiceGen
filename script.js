@@ -27,6 +27,17 @@ angular.module('invoiceGen', ['ngRoute', 'angular-locker', 'menu', 'companyPage'
     // Topmost controller, for the whole page
     .controller('IndexCtrl', ['$scope', '$location', 'locker', function($scope, $location, locker) {
 
+        // Data handling
+        // Bind companies to localstorage and initialize invoice to empty
+        // locker.bind($scope, 'invoice');
+        locker.bind($scope, 'company', {}); // default value {} is important!
+        $scope.invoice = {taxRate: 0.25};
+
+        // Redirect to invoice page if company info already stored
+        if (! _.isEmpty($scope.company)) {
+            $location.path(pages[1].url);
+        }
+
         // Page handling
         $scope.pages = pages;
         $scope.nextPage = function() {
@@ -45,12 +56,5 @@ angular.module('invoiceGen', ['ngRoute', 'angular-locker', 'menu', 'companyPage'
                 $location.path(newPage.url);
             }
         };
-
-        // Data handling
-        // Bind companies to localstorage and initialize invoice to empty
-//        locker.bind($scope, 'invoice');
-        locker.bind($scope, 'company', {}); // default value {} is important!
-        $scope.invoice = {taxRate: 0.25};
-
 
     }]);
