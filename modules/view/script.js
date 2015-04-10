@@ -16,8 +16,12 @@ angular.module('viewPage', ['filters', 'ngSanitize'])
             var printContents = document.getElementById("wrapper").innerHTML;
             var popupWin = window.open('', '_blank', 'width=800,height=600');
             popupWin.document.open();
-            var printHtml = '<html><head><link rel="stylesheet" type="text/css" href="css/invoice.css" /></head>'
-                + '<body onload="window.print()">' + printContents + '</body></html>';
+            var bootstrap = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/'
+                + 'bootstrap.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/'
+                + '3.3.4/css/bootstrap-theme.min.css">';
+            var css = '<link rel="stylesheet" type="text/css" href="css/invoice.css" />'+bootstrap;
+            var printHtml = '<html><head>'+css+'</head><body onload="window.print()">' +
+                printContents + '</body></html>';
             popupWin.document.write(printHtml);
             popupWin.document.close();
         }
