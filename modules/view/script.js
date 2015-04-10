@@ -12,4 +12,14 @@ angular.module('viewPage', ['filters'])
         $scope.price.tax = function() { return $scope.price.withoutTax()*$scope.invoice.taxRate };
         $scope.price.withTax = function() {return $scope.price.withoutTax() + $scope.price.tax()};
 
+        $scope.printInvoice = function() {
+            var printContents = document.getElementById("wrapper").innerHTML;
+            var popupWin = window.open('', '_blank', 'width=800,height=600');
+            popupWin.document.open();
+            var printHtml = '<html><head><link rel="stylesheet" type="text/css" href="css/invoice.css" /></head>'
+                + '<body onload="window.print()">' + printContents + '</body></html>';
+            popupWin.document.write(printHtml);
+            popupWin.document.close();
+        }
+
     }]);
