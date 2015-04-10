@@ -28,7 +28,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>B&B Web ({{invoice.startDate | showDate}} - {{invoice.endDate | showDate}})</td>
+                    <td>{{company.theirs.name}} ({{invoice.startDate | showDate}} - {{invoice.endDate | showDate}})</td>
                     <td>{{invoice.hours}}</td>
                     <td>{{invoice.hourlyRate | showCurrency}}</td> <!-- TODO: change to allow multiple rows here -->
                     <td>{{price.withoutTax() | showCurrency}}</td>
