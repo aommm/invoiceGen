@@ -2,7 +2,7 @@
  * Created by Niklas on 2015-04-05.
  */
 
-angular.module('viewPage', ['filters'])
+angular.module('viewPage', ['filters', 'ngSanitize'])
     .controller('ViewCtrl', ['$scope', function($scope) {
         console.log("view view cr8td");
 

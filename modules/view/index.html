@@ -11,7 +11,7 @@
             <p>Er referens: {{company.yours.contactName}}</p>
         </div>
         <div id="customer-data" style="text-align: right">
-            <p>{{company.theirs.address}}</p>
+            <p ng-bind-html="company.theirs.address | nl2br"></p>
         </div>
     </header>
     <div id="content">
@@ -44,7 +44,7 @@
                     <td>{{price.withoutTax() | showCurrency}}</td>
                 </tr>
                 <tr>
-                    <th>Moms (25%)</th>
+                    <th>Moms ({{invoice.taxRate | showPercent}})</th>
                     <td>{{price.tax() | showCurrency}}</td>
                 </tr>
                 <tr class="total">
@@ -60,7 +60,7 @@
         <div class="row">
             <div class="col">
                 <h4>Adressuppgifter</h4>
-                <p>{{company.yours.address}}</p>
+                <p ng-bind-html="company.yours.address | nl2br"></p>
             </div>
             <div class="col">
                 <h4>Bankkonto</h4>
@@ -71,7 +71,7 @@
             </div>
             <div class="col">
                 <h4>Kontaktuppgifter</h4>
-                <p>{{company.yours.contactInfo}}</p>
+                <p ng-bind-html="company.yours.contactInfo | nl2br"></p>
             </div>
         </div>
     </footer>

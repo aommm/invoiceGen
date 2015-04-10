@@ -11,6 +11,12 @@ angular.module('filters', [])
             // return "hej! =)";
         }
     })
+    .filter('nl2br', function() {
+        return function(n) {
+            if (!n) return n;
+            return n.replace(/\n\r?/g, '<br />');
+        }
+    })
     .filter('showPercent', function() {
         return function(n) {
             if (n) return n*100 + "%";
