@@ -20,8 +20,8 @@ angular.module('viewPage', ['filters', 'ngSanitize'])
                 + 'bootstrap.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/'
                 + '3.3.4/css/bootstrap-theme.min.css">';
             var css = '<link rel="stylesheet" type="text/css" href="css/invoice.css" />'+bootstrap;
-            var printHtml = '<html><head>'+css+'</head><body onload="window.print()">' +
-                printContents + '</body></html>';
+            var printHtml = '<html><head>'+css+'</head><body onload="window.print()"><div class="container"><div id="wrapper">' +
+                printContents + '</div></div></body></html>';
             popupWin.document.write(printHtml);
             popupWin.document.close();
         }

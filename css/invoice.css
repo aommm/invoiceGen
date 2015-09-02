@@ -41,6 +41,7 @@ h4 {
 	margin: 60px 0;
 	width: 28%;
 	float: right;
+	font-size: 14px;
 }
 
 #summary th {
@@ -83,12 +84,14 @@ h4 {
 #invoice-details {
 	width: 100%;
 	border-spacing: 0px;
+
 }
 
 
 #invoice-details th, #invoice-details td {
 	text-align: left;
 	width: 20%;
+	font-size: 14px;
 }
 
 #invoice-details th {
