@@ -5,7 +5,7 @@
         <div id="invoice-data">
             <p>
                 Fakturanummer: <strong>{{invoice.nr}}</strong> <br>
-                Fakturadatum: <strong>{{invoice.startDate | showDate}}</strong> Förfallodatum: <strong>{{invoice.endDate | showDate}}</strong><br>
+                Fakturadatum: <strong>{{invoice.invoiceDate | showDate}}</strong> Förfallodatum: <strong>{{invoice.expirationDate | showDate}}</strong><br>
                 Dröjsmålsränta: Enligt lag<br>
             </p>
             <p>Er referens: {{company.yours.contactName}}</p>
